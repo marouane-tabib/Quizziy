@@ -1,0 +1,24 @@
+body {
+  background-color: #fff;
+}
+body .container {
+  height: 100vh;
+  display: flex;
+}
+body .container img {
+  background: rgba(255, 235, 59, 0.6);
+  border-radius: 0 0 5px 5px;
+  box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.2666666667);
+}
+body .row {
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+body .row .card-intro {
+  padding: 20px 30px;
+}
+body .row .card-intro button {
+  background: rgba(255, 235, 59, 0.6);
+  border: none;
+}
