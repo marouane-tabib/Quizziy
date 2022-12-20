@@ -16,10 +16,44 @@ body{
             height: 100vh;
             .card-intro{
                 padding: 20px 30px;
+                position: relative;
                 button{
                     background: rgb(255 235 59 / 60%);
                     border: none;
+                    transition: 1s;
+                }
+                .fader{
+                    position: absolute;
+                    bottom: 0;
+                    background: rgb(255 235 59);
+                    transition: 1s;
+                    &{
+                        animation-name: fader;
+                        animation-duration: 4s;
+                        animation-delay: .6s;
+                    }
+                    &-reverce{
+                        animation-direction: reverse;
+                    }
                 }
             }
         }
 }
+@keyframes fader {
+    0%{
+        width: 100%;
+        height: 0%;
+    }
+    25%{
+        width: 100%;
+        height: 100%;
+    }
+    50%{
+        width: 0%;
+        height: 100%;
+    }
+    100%{
+        width: 0;
+        height: 0%;
+    }
+  }
