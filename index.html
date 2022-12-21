@@ -12,16 +12,49 @@
 
     <section class="container">
       <img src="assets/img/aws-logo.png" class="logo-img" height="70" alt="">
-      <div class="row">
+      <div class="row col-12">
         <div class="content col-11 col-md-8 mx-auto">
-          <div class="card-intro ">
+          <div class="card-intro d-none ">
             <h1>Hello to Quizziy</h1>
             <p class="text-muted">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages.
             </p>
-            <!-- <button class="col-3 float-end">GO -></button> -->
             <button class="float-end h3" id="start-btn" onclick="">Start Now <i class="fa-solid fa-arrow-right"></i></button>
           </div>
-          <div class="fader"></div>
+          <div class="card-questions">
+            <b>1) Why is AWS more economical than traditional data centers for applications with varying compute
+              workloads?</b><hr>
+            <div class="my-2">
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                <label class="form-check-label" for="flexRadioDefault1">
+                  Amazon EC2 costs are billed on a monthly basis
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                <label class="form-check-label" for="flexRadioDefault2">
+                  Users retain full administrative access to their Amazon EC2 instances.
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                <label class="form-check-label" for="flexRadioDefault1">
+                  Amazon EC2 instances can be launched on demand when needed.
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                <label class="form-check-label" for="flexRadioDefault2">
+                  Users can permanently run enough instances to handle peak workloads
+                </label>
+              </div>
+            </div>
+            <div class="my-4">
+              <button class="float-end" id="next-btn" onclick="">Next <i class="fa-solid fa-arrow-right"></i></button>
+              <button id="prev-btn" onclick=""><i class="fa-solid fa-arrow-left"></i> Prev</button>
+            </div>
+          </div>
+          <!-- <div class="fader"></div> -->
         </div>
       </div>
     </section>
@@ -30,9 +63,8 @@
     <script>
       $(document).ready(function(){
         $('#start-btn').on('click' , function(){
-          $('.fader').each(function(){
-            $(this).addClass("active");
-          });
+            $('.card-intro').toggle(1000);
+            $('.card-questions').show(1000);
         })
       });
     </script>
