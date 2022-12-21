@@ -1,0 +1,10 @@
+.card-questions{
+    padding: 5px 10px;
+    padding-right: 30px;
+    button{
+        @include btn
+    }
+    .form-check{
+      margin-bottom: .5rem;
+    }
+}
