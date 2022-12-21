@@ -1,13 +1,15 @@
 $base-color: #fff;
+$yellow-background : rgb(255 235 59 / 60%);
 body{
     background-color: $base-color;
     .container{
         height: 100vh;
         display: flex;
         img{
-            background: rgb(255 235 59 / 60%);
+            background: $yellow-background;
             border-radius: 0 0 5px 5px;
             box-shadow: 0px 2px 7px #0004;
+            position: fixed;
         }
     }
         .row{
@@ -19,7 +21,7 @@ body{
                 padding-right: 30px;
                 position: relative;
                 button{
-                    background: rgb(255 235 59 / 60%);
+                    background: $yellow-background;
                     border: none;
                     transition: 1s;
                 }
