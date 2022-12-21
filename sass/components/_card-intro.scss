@@ -1,0 +1,11 @@
+.card-intro{
+    padding: 5px 10px;
+    padding-right: 30px;
+    position: relative;
+    button{
+        background: $yellow-background;
+        border: none;
+        transition: 1s;
+    }
+    @import 'fader';
+}

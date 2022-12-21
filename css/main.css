@@ -46,7 +46,6 @@ body .row .card-intro .fader {
 body .row .card-intro .fader-reverce {
   animation-direction: reverse;
 }
-
 @-webkit-keyframes fader {
   0% {
     width: 160px;
@@ -73,7 +72,6 @@ body .row .card-intro .fader-reverce {
     height: 2px;
   }
 }
-
 @keyframes fader {
   0% {
     width: 160px;

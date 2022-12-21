@@ -6,62 +6,10 @@ body{
         display: flex;
         @import 'components/logo-img';
     }
-        .row{
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            .card-intro{
-                padding: 5px 10px;
-                padding-right: 30px;
-                position: relative;
-                button{
-                    background: $yellow-background;
-                    border: none;
-                    transition: 1s;
-                }
-                .fader{
-                    width: 160px;
-                    height: 2px;
-                    position: absolute;
-                    left: 0;
-                    bottom: 0;
-                    background: rgb(255 235 59);
-                    transition: 1s;
-                    &{
-                        animation-name: fader;
-                        animation-duration: 4s;
-                        animation-delay: .6s;
-                    }
-                    &-reverce{
-                        animation-direction: reverse;
-                    }
-                }
-            }
-        }
+    .row{
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        @import 'components/card-intro';
+    }
 }
-@keyframes fader {
-    0%{
-        width: 160px;
-        height: 2px;
-    }
-    16%{
-        width: 100%;
-        height: 2px;
-    }
-    34%{
-        width: 100%;
-        height: 100%;
-    }
-    50%{
-        width: 0;
-        height: 100%;
-    }
-    70%{
-        width: 0;
-        height: 2px;
-    }
-    100%{
-        width: 160px;
-        height: 2px;
-    }
-  }

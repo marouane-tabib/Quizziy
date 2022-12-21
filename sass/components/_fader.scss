@@ -1,0 +1,18 @@
+.fader{
+    width: 160px;
+    height: 2px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background: rgb(255 235 59);
+    transition: 1s;
+    &{
+        animation-name: fader;
+        animation-duration: 4s;
+        animation-delay: .6s;
+    }
+    &-reverce{
+        animation-direction: reverse;
+    }
+}
+@import 'animations/fader-animation';
