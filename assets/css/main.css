@@ -22,12 +22,23 @@ body .row .content {
 body .row .card-intro {
   padding: 5px 10px;
   padding-right: 30px;
-  position: relative;
 }
 body .row .card-intro button {
   background: rgba(255, 235, 59, 0.6);
   border: none;
   transition: 1s;
+}
+body .row .card-questions {
+  padding: 5px 10px;
+  padding-right: 30px;
+}
+body .row .card-questions button {
+  background: rgba(255, 235, 59, 0.6);
+  border: none;
+  transition: 1s;
+}
+body .row .card-questions .form-check {
+  margin-bottom: 0.5rem;
 }
 body .row .fader {
   width: 160px;
