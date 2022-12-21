@@ -35,7 +35,7 @@ body .row .card-intro .fader {
   background: rgb(255, 235, 59);
   transition: 1s;
 }
-body .row .card-intro .fader {
+body .row .card-intro .fader.active {
   -webkit-animation-name: fader;
           animation-name: fader;
   -webkit-animation-duration: 4s;

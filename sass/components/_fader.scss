@@ -6,7 +6,7 @@
     bottom: 0;
     background: rgb(255 235 59);
     transition: 1s;
-    &{
+    &.active{
         animation-name: fader;
         animation-duration: 4s;
         animation-delay: .6s;
