@@ -1,5 +1,4 @@
-$base-color: #fff;
-$yellow-background : rgb(255 235 59 / 60%);
+@import 'abstracts/variables';
 body{
     background-color: $base-color;
     .container{
