@@ -16,6 +16,9 @@ body .row {
   align-items: center;
   height: 100vh;
 }
+body .row .content {
+  position: relative;
+}
 body .row .card-intro {
   padding: 5px 10px;
   padding-right: 30px;
@@ -26,7 +29,7 @@ body .row .card-intro button {
   border: none;
   transition: 1s;
 }
-body .row .card-intro .fader {
+body .row .fader {
   width: 160px;
   height: 2px;
   position: absolute;
@@ -35,7 +38,7 @@ body .row .card-intro .fader {
   background: rgb(255, 235, 59);
   transition: 1s;
 }
-body .row .card-intro .fader.active {
+body .row .fader.active {
   -webkit-animation-name: fader;
           animation-name: fader;
   -webkit-animation-duration: 4s;
@@ -43,7 +46,7 @@ body .row .card-intro .fader.active {
   -webkit-animation-delay: 0.6s;
           animation-delay: 0.6s;
 }
-body .row .card-intro .fader-reverce {
+body .row .fader-reverce {
   animation-direction: reverse;
 }
 @-webkit-keyframes fader {
