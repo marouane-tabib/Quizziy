@@ -42,14 +42,13 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/data.js"></script>
     <script>
-      getStart();
       function getStart(){
         questionElement = document.querySelector('#question');
         optionsContainer = document.querySelector('#options');
 
-        index = randomIndex(0, 2);
+        index = randomIndex(0, questions.length);
         getQuestion(index);
-        
+
         function getQuestion(index){
           options = questions[index].options;
           question = questions[index].question;
@@ -65,22 +64,17 @@
                   </div>`;
           }
         }
-
-
         function randomIndex(min , max){
-          // indexes = [];
-          // for (let min = 0; min < max; min++) {
             index = Math.floor(Math.random() * (max - min) + min);
-          //   indexes.push(index);
-          // }
           return index;
         }
       }
+      getStart();
+      
       $(document).ready(function(){
         $('#start-btn').on('click' , function(){
             $('.card-intro').toggle(1000);
             $('.card-questions').show(1000);
-            // wa7ed blan , wach dakchi li kanktbo fe style.scss , wach sass wela css | le php logha li atered le 2awamire deylha le html fe lekhere , 3lach magnach 3lihe preproceseur
         })
       });
     </script>
