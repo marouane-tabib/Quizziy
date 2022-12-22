@@ -1,4 +1,4 @@
-$questions = [
+questions = [
     {
         question : "Why is AWS more economical than traditional data centers for applications with varying compute workloads?",
         options : [
