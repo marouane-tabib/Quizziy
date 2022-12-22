@@ -21,37 +21,17 @@
             <button class="float-end h3" id="start-btn" onclick="">Start Now <i class="fa-solid fa-arrow-right"></i></button>
           </div>
           <div class="card-questions">
-            <b>1) Why is AWS more economical than traditional data centers for applications with varying compute
-              workloads?</b><hr>
-            <div class="my-2">
-              <div class="form-check">
+            <b id="question"></b><hr>
+            <div class="my-2" id="options">
+              <!-- <div class="form-check">
                 <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
                 <label class="form-check-label" for="flexRadioDefault1">
                   Amazon EC2 costs are billed on a monthly basis
                 </label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
-                <label class="form-check-label" for="flexRadioDefault2">
-                  Users retain full administrative access to their Amazon EC2 instances.
-                </label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                <label class="form-check-label" for="flexRadioDefault1">
-                  Amazon EC2 instances can be launched on demand when needed.
-                </label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
-                <label class="form-check-label" for="flexRadioDefault2">
-                  Users can permanently run enough instances to handle peak workloads
-                </label>
-              </div>
+              </div> -->
             </div>
             <div class="my-4">
-              <button class="float-end" id="next-btn" onclick="">Next <i class="fa-solid fa-arrow-right"></i></button>
-              <button id="prev-btn" onclick=""><i class="fa-solid fa-arrow-left"></i> Prev</button>
+              <button class="float-end h5" id="next-btn" onclick="">Next <i class="fa-solid fa-arrow-right"></i></button>
             </div>
           </div>
           <!-- <div class="fader"></div> -->
@@ -62,10 +42,41 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/data.js"></script>
     <script>
+      getStart();
+      function getStart(){
+        questionElement = document.querySelector('#question');
+        optionsContainer = document.querySelector('#options');
+        options = questions[0].options;
+        question = questions[0].question;
+
+        questionElement.innerText = question;
+        for (let i = 0; i < options.length; i++) {
+          const option = options[i];
+          optionsContainer.innerHTML += `<div class="form-check">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                  <label class="form-check-label" for="flexRadioDefault1">
+                    ${option}
+                  </label>
+                </div>`;
+        }
+
+        indexes = randomIndex(0, 12)
+        console.log(indexes);
+
+        function randomIndex(min , max){
+          indexes = [];
+          for (let min = 0; min < max; min++) {
+            index = Math.floor(Math.random() * (max - min) + min);
+            indexes.push(index);
+          }
+          return indexes;
+        }
+      }
       $(document).ready(function(){
         $('#start-btn').on('click' , function(){
             $('.card-intro').toggle(1000);
             $('.card-questions').show(1000);
+            // wa7ed blan , wach dakchi li kanktbo fe style.scss , wach sass wela css | le php logha li atered le 2awamire deylha le html fe lekhere , 3lach magnach 3lihe preproceseur
         })
       });
     </script>
