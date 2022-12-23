@@ -14,27 +14,19 @@
       <img src="assets/img/aws-logo.png" class="logo-img" height="70" alt="">
       <div class="row col-12">
         <div class="content col-11 col-md-8 mx-auto">
-          <div class="card-intro d-none ">
+          <div class="card-intro ">
             <h1>Hello to Quizziy</h1>
             <p class="text-muted">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages.
             </p>
-            <button class="float-end h3" id="start-btn" onclick="">Start Now <i class="fa-solid fa-arrow-right"></i></button>
+            <button class="float-end h3" id="start-btn" onclick="getStart()">Start Now <i class="fa-solid fa-arrow-right"></i></button>
           </div>
-          <div class="card-questions">
+          <div class="card-questions" style="display: none;">
             <b id="question"></b><hr>
-            <div class="my-2" id="options">
-              <!-- <div class="form-check">
-                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                <label class="form-check-label" for="flexRadioDefault1">
-                  Amazon EC2 costs are billed on a monthly basis
-                </label>
-              </div> -->
-            </div>
+            <div class="my-2" id="options"></div>
             <div class="my-4">
-              <button class="float-end h5" id="next-btn" onclick="getStart()">Next <i class="fa-solid fa-arrow-right"></i></button>
+              <button class="float-end h5" id="next-btn" onclick="next()">Next <i class="fa-solid fa-arrow-right"></i></button>
             </div>
           </div>
-          <!-- <div class="fader"></div> -->
         </div>
       </div>
     </section>
@@ -42,28 +34,20 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/data.js"></script>
     <script>
-      // trafic = [];
-      function getStart(){
-        questionElement = document.querySelector('#question');
-        optionsContainer = document.querySelector('#options');
+      
+      questionElement = document.querySelector('#question');
+      optionsContainer = document.querySelector('#options');
+      let defaultIndex = 0;
 
-        // index = randomIndex(0, questions.length);
-
-        // if(trafic.indexOf(index) === -1){ 
-        //   trafic.push(index); 
-        //   getQuestion(index);
-        // }
+      function questionsTraffic(){
         var arr = [];
         while(arr.length < questions.length){
-            // var r = Math.floor(Math.random() * 100) + 1;
             r = Math.floor(Math.random() * (questions.length - 0) + 0);
             if(arr.indexOf(r) === -1) arr.push(r);
         }
-          getQuestion(r);
-        
-        console.log(arr);
-
-        function getQuestion(index){
+        return arr;
+      }
+      function getQuestions(index){
           options = questions[index].options;
           question = questions[index].question;
           questionElement.innerText = question;
@@ -78,20 +62,17 @@
                     </label>
                   </div>`;
           }
-        }
-        function randomIndex(min , max){
-            index = Math.floor(Math.random() * (max - min) + min);
-          return index;
-        }
       }
-      getStart();
-
-      $(document).ready(function(){
-        $('#start-btn').on('click' , function(){
-            $('.card-intro').toggle(1000);
-            $('.card-questions').show(1000);
-        })
-      });
+      function getStart(){
+          $('.card-intro').hide(1000);
+          $('.card-questions').show(1000);
+          index = questionsTraffic();
+          getQuestions(index[defaultIndex]);
+      }
+      function next(){
+              index = questionsTraffic();
+              getQuestions(index[defaultIndex++]);
+      }
     </script>
   </body>
 </html>
