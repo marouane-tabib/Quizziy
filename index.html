@@ -27,6 +27,13 @@
               <button class="float-end h5" id="next-btn" onclick="next()">Next <i class="fa-solid fa-arrow-right"></i></button>
             </div>
           </div>
+          <div class="card-result" style="display: none;">
+            <b id="question"></b><hr>
+            <div class="my-2" id="options"></div>
+            <div class="my-4">
+              <button class="float-end h5" id="next-btn" onclick="next()">Next <i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -74,6 +81,10 @@
         if (defaultIndex < questions.length) {
           getQuestions(index[defaultIndex++]);
         }else { console.log('Show result section !'); }
+      }
+      function getResult(){
+        $('.card-questions').hide(1000);
+        $('.card-result').show(1000);
       }
     </script>
   </body>
