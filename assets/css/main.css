@@ -52,6 +52,16 @@ body .row .content .card-results .answers-cards {
   box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1333333333);
   margin: 10px 0;
 }
+body .row .content .card-results .answers-cards .user-chose, body .row .content .card-results .answers-cards .correct-answer {
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: #222;
+}
+body .row .content .card-results .answers-cards .demonstration {
+  font-size: 0.8rem;
+  color: #555;
+  margin-top: 10px;
+}
 body .row .content .card-results .answers-cards.issue {
   background-color: rgba(255, 0, 0, 0.1803921569);
 }

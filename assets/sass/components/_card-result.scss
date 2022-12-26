@@ -5,6 +5,16 @@
         border-radius: 5px;
         box-shadow: 1px 1px 4px #0002;
         margin: 10px 0;
+        .user-chose , .correct-answer{
+            font-size: .85rem;
+            font-weight: 400;
+            color: #222;
+        }
+        .demonstration{
+            font-size: .8rem;
+            color: #555;
+            margin-top: 10px;
+        }
         &.issue{
             background-color: #ff00002e;
         }
