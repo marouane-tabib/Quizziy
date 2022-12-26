@@ -45,3 +45,33 @@
           }else { getResult(); }
         }else{ alert('please chose option ... ')}
       }
+      function getResult(){
+        resultElement = document.querySelector('.card-results');
+        for (const answer in answers) {
+          let question = questions[answers[answer][1]];
+              Answerquestion = question.question,
+              AnswerCorrect = question.answer.correctOption,
+              AnswerCorrectOption = question.options[AnswerCorrect],
+              AnswerDemonstration = question.answer.demonstration,
+              userChose = answers[answer][0],
+              userChoseOption = question.options[userChose],
+              cardClass = "",
+              correctElementClass = "";
+              if(AnswerCorrect == userChose){ cardClass = "correct" , correctElementClass = "d-none"; }else{ cardClass = "issue" }
+
+              resultElement.innerHTML += `
+                <div class="answers-cards ${ cardClass }">
+                  <b id="question">${Answerquestion}</b><hr>
+                  <div class="user-chose">Your chose : ${userChose} - ${userChoseOption}</div>
+                  <div class="correct-answer ${correctElementClass}">Correct Answer : ${AnswerCorrect} - ${AnswerCorrectOption}</div>
+                  <div class="demonstration">${AnswerDemonstration}</div>
+                </div>`;
+        }
+        steperMove();
+        $('.card-questions').hide();
+        $('.card-results').show();
+      }
+      function selectAnswers(questionIndex){
+        answer = $('input:checked').attr('id');
+        answers.push([answer , questionIndex]);
+      }
