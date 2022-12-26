@@ -132,20 +132,23 @@
         getQuestions(index[defaultIndex]);
       }
       function next(){
-        selectAnswers();
-        index = questionsTraffic();
         if (defaultIndex < questions.length) {
+          selectAnswers(index[defaultIndex]);
           getQuestions(index[defaultIndex++]);
         }else { getResult(); }
       }
       function getResult(){
+        resultElement = document.querySelector('.card-result');
         steperMove();
         $('.card-questions').hide();
         $('.card-result').show();
       }
-      function selectAnswers(){
+      function selectAnswers(questionIndex){
         answer = $('input:checked').attr('id');
-        answers.push(answer);
+        answers.push([answer , questionIndex]);
+      }
+      function validateAnswers(){
+        
       }
     </script>
   </body>
