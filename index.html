@@ -60,10 +60,12 @@
               AnswerCorrectOption = question.options[AnswerCorrect],
               AnswerDemonstration = question.answer.demonstration,
               userChose = answers[answer][0],
-              userChoseOption = question.options[userChose];
+              userChoseOption = question.options[userChose],
+              cardClass = "";
+              if(AnswerCorrect == userChose){ cardClass = "correct" }else{ cardClass = "issue" }
 
           resultElement.innerHTML += `
-            <div class="answers-cards">
+            <div class="answers-cards ${ cardClass }">
               <b id="question">${Answerquestion}</b><hr>
               <div class="correct">${AnswerCorrect} - ${AnswerCorrectOption}</div>
               <div class="issue">Your chose : ${userChose} - ${userChoseOption}</div>
