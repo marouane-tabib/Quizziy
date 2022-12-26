@@ -9,24 +9,53 @@
     <link rel="stylesheet" href="assets/css/main.css">
   </head>
   <body>
+    <style>
+      .steper-card{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .step-box{
+        position: relative;
+        background: #EEE;
+        padding: .8% 1.9%;
+        border-radius: 50%;
+        border: 1px solid #CCC8;
+        box-shadow: 0 1px 6px #0002 inset;
+        /* font-size: 1.1rem; */
+        font-weight: bold;
+      }
+        .active{
+          background: #fff389;
+          box-shadow: 1px 1px 8px #0003;
+        }
+      .steper-line{
+        position: absolute;
+        height: 1px;
+        width: 100%;
+        background: linear-gradient(45deg, black, transparent);
+        z-index: -1;
+      }
+    </style>
 
     <section class="container">
       <img src="assets/img/aws-logo.png" class="logo-img" height="70" alt="">
       <div class="row col-12">
         <div class="content col-11 col-md-8 mx-auto">
           <div class="steper-card">
-            <div class="step">
-              <span id="step-number">1</span>
+            <div class="step-box">
+              <span id="step-number one">1</span>
               <span id="step-icon" style="display: none;"><i class="fa fa-rocket" aria-hidden="true"></i></span>
             </div>
-            <div class="step">
-              <span id="step-number">2</span>
+            <div class="step-box">
+              <span id="step-number two">2</span>
               <span id="step-icon" style="display: none;"><i class="fa fa-rocket" aria-hidden="true"></i></span>
             </div>
-            <div class="step">
-              <span id="step-number">3</span>
+            <div class="step-box">
+              <span id="step-number tree">3</span>
               <span id="step-icon" style="display: none;"><i class="fa fa-rocket" aria-hidden="true"></i></span>
             </div>
+            <div class="steper-line"></div>
           </div>
           <div class="card-intro ">
             <h1>Hello to Quizziy</h1>
@@ -41,8 +70,7 @@
               <button class="float-end h5" id="next-btn" onclick="next()">Next <i class="fa-solid fa-arrow-right"></i></button>
             </div>
           </div>
-          <div class="card-result" style="display: none;">
-            <div class="card-questions">
+          <div class="card-result" id="result" style="display: none;">
               <b id="question">Why is AWS more economical than traditional data centers for applications with varying compute workloads?</b><hr>
               <div class="my-2" id="options">
                 <div class="form-check">
@@ -56,7 +84,6 @@
                     ${option}
                   </label>
                 </div>
-              </div>
             </div>
           </div>
         </div>
@@ -108,8 +135,8 @@
         }else { getResult(); }
       }
       function getResult(){
-        $('.card-result').css('background' , 'red');
-        $('.card-questions').show();
+        $('.card-questions').hide();
+        $('.card-result').show();
       }
     </script>
   </body>
