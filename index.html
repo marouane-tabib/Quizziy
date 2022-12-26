@@ -36,6 +36,21 @@
         background: linear-gradient(45deg, black, transparent);
         z-index: -1;
       }
+      .card-results .issue{
+        background: #f006;
+        border-radius: 3px;
+      }
+      .card-results .correct{
+        background: #36ab3666;
+        border-radius: 3px;
+      }
+      .card-results .answers-cards{
+        padding: 10px 20px;
+        background: #EEE;
+        border-radius: 5px;
+        box-shadow: 1px 1px 4px #0002;
+        margin: 5px 0;
+      }
     </style>
 
     <section class="container">
@@ -70,7 +85,8 @@
               <button class="float-end h5" id="next-btn" onclick="next()">Next <i class="fa-solid fa-arrow-right"></i></button>
             </div>
           </div>
-          <div class="card-result" id="result" style="display: none;">
+          <div class="card-results" id="result">
+            <div class="answers-cards">
               <b id="question">Why is AWS more economical than traditional data centers for applications with varying compute workloads?</b><hr>
               <div class="my-2" id="options">
                 <div class="form-check">
@@ -78,12 +94,28 @@
                   <label class="form-check-label" for="flexRadioDefault1">
                     ${option}
                   </label>
-                </div><div class="form-check">
+                </div>
+                <div class="form-check">
                   <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
                   <label class="form-check-label" for="flexRadioDefault1">
                     ${option}
                   </label>
                 </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                  <label class="form-check-label" for="flexRadioDefault1">
+                    ${option}
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                  <label class="form-check-label" for="flexRadioDefault1">
+                    ${option}
+                  </label>
+                </div>
+                <hr>
+                <div class="demonstration">The AWS Acceptable Use Policy provides information regarding prohibited actions on the AWS infrastructure.</div>
+              </div>
             </div>
           </div>
         </div>
@@ -138,10 +170,10 @@
         }else { getResult(); }
       }
       function getResult(){
-        resultElement = document.querySelector('.card-result');
+        resultElement = document.querySelector('.card-results');
         steperMove();
         $('.card-questions').hide();
-        $('.card-result').show();
+        $('.card-results').show();
       }
       function selectAnswers(questionIndex){
         answer = $('input:checked').attr('id');
