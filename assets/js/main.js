@@ -37,8 +37,11 @@
         getQuestions(index[defaultIndex]);
       }
       function next(){
-        if (defaultIndex < questions.length) {
-          selectAnswers(index[defaultIndex]);
-          getQuestions(index[defaultIndex++]);
-        }else { getResult(); }
+        answer = $('input:checked').attr('id');
+        if(answer){
+          if (defaultIndex < questions.length) {
+            selectAnswers(index[defaultIndex]);
+            getQuestions(index[defaultIndex++]);
+          }else { getResult(); }
+        }else{ alert('please chose option ... ')}
       }
