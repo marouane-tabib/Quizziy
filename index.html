@@ -100,14 +100,20 @@
       function getResult(){
         resultElement = document.querySelector('.card-results');
         for (const answer in answers) {
-          question = questions[answers[answer][1]];
-          userChose = questions[answers[answer][0]];
+          let question = questions[answers[answer][1]];
+              Answerquestion = question.question,
+              AnswerCorrect = question.answer.correctOption,
+              AnswerCorrectOption = question.options[AnswerCorrect],
+              AnswerDemonstration = question.answer.demonstration,
+              userChose = answers[answer][0],
+              userChoseOption = question.options[userChose];
+
           resultElement.innerHTML += `
             <div class="answers-cards">
-              <b id="question">${question.question}</b><hr>
-              <div class="correct">${question.answer.correctOption}</div>
-              <div class="issue"></div>
-              <div id="demonstration">${question.answer.demonstration}</div>
+              <b id="question">${Answerquestion}</b><hr>
+              <div class="correct">${AnswerCorrect} - ${AnswerCorrectOption}</div>
+              <div class="issue">Your chose : ${userChose} - ${userChoseOption}</div>
+              <div id="demonstration">${AnswerDemonstration}</div>
             </div>`;
             console.log(answer);
             console.log(answers);
