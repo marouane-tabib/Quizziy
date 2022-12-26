@@ -62,6 +62,12 @@ body .row .content .card-results .answers-cards {
   box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1333333333);
   margin: 10px 0;
 }
+body .row .content .card-results .answers-cards.issue {
+  background-color: rgba(255, 0, 0, 0.1803921569);
+}
+body .row .content .card-results .answers-cards.correct {
+  background-color: rgba(0, 128, 0, 0.168627451);
+}
 body .row .content .card-intro {
   padding: 5px 10px;
   padding-right: 30px;

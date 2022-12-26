@@ -15,5 +15,11 @@
         border-radius: 5px;
         box-shadow: 1px 1px 4px #0002;
         margin: 10px 0;
+        &.issue{
+            background-color: #ff00002e;
+        }
+        &.correct{
+            background-color: #0080002b;
+        }
     }
 }
