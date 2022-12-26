@@ -132,7 +132,7 @@
         getQuestions(index[defaultIndex]);
       }
       function next(){
-        getAnswers();
+        selectAnswers();
         index = questionsTraffic();
         if (defaultIndex < questions.length) {
           getQuestions(index[defaultIndex++]);
@@ -143,7 +143,7 @@
         $('.card-questions').hide();
         $('.card-result').show();
       }
-      function getAnswers(){
+      function selectAnswers(){
         answer = $('input:checked').attr('id');
         answers.push(answer);
       }
