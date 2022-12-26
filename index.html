@@ -39,17 +39,19 @@
       .card-results .issue{
         background: #f006;
         border-radius: 3px;
+        padding: 2px 10px;
       }
       .card-results .correct{
         background: #36ab3666;
         border-radius: 3px;
+        padding: 2px 10px;
       }
       .card-results .answers-cards{
         padding: 10px 20px;
         background: #EEE;
         border-radius: 5px;
         box-shadow: 1px 1px 4px #0002;
-        margin: 5px 0;
+        margin: 10px 0;
       }
     </style>
 
@@ -85,13 +87,7 @@
               <button class="float-end h5" id="next-btn" onclick="next()">Next <i class="fa-solid fa-arrow-right"></i></button>
             </div>
           </div>
-          <div class="card-results" id="result">
-            <div class="answers-cards">
-              <b id="question"></b><hr>
-              <div class="my-2" id="options"></div><hr>
-              <div id="demonstration"></div>
-            </div>
-          </div>
+          <div class="card-results" id="result"></div>
         </div>
       </div>
     </section>
@@ -103,6 +99,20 @@
       
       function getResult(){
         resultElement = document.querySelector('.card-results');
+        for (const answer in answers) {
+          question = questions[answers[answer][1]];
+          userChose = questions[answers[answer][0]];
+          resultElement.innerHTML += `
+            <div class="answers-cards">
+              <b id="question">${question.question}</b><hr>
+              <div class="correct">${question.answer.correctOption}</div>
+              <div class="issue"></div>
+              <div id="demonstration">${question.answer.demonstration}</div>
+            </div>`;
+            console.log(answer);
+            console.log(answers);
+            console.log(answers[answer][1]);
+        }
         steperMove();
         $('.card-questions').hide();
         $('.card-results').show();
