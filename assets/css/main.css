@@ -19,6 +19,49 @@ body .row {
 body .row .content {
   position: relative;
 }
+body .row .content .steper-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+body .row .content .steper-card .step-box {
+  position: relative;
+  background: #EEE;
+  padding: 0.8% 1.9%;
+  border-radius: 50%;
+  border: 1px solid rgba(204, 204, 204, 0.5333333333);
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1333333333) inset;
+  /* font-size: 1.1rem; */
+  font-weight: bold;
+}
+body .row .content .steper-card .step-box.active {
+  background: #fff389;
+  box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.2);
+}
+body .row .content .steper-card .steper-line {
+  position: absolute;
+  height: 1px;
+  width: 100%;
+  background: linear-gradient(45deg, black, transparent);
+  z-index: -1;
+}
+body .row .content .card-results .issue {
+  background: rgba(255, 0, 0, 0.4);
+  border-radius: 3px;
+  padding: 2px 10px;
+}
+body .row .content .card-results .correct {
+  background: rgba(54, 171, 54, 0.4);
+  border-radius: 3px;
+  padding: 2px 10px;
+}
+body .row .content .card-results .answers-cards {
+  padding: 10px 20px;
+  background: #EEE;
+  border-radius: 5px;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1333333333);
+  margin: 10px 0;
+}
 body .row .card-intro {
   padding: 5px 10px;
   padding-right: 30px;
