@@ -62,28 +62,28 @@ body .row .content .card-results .answers-cards {
   box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1333333333);
   margin: 10px 0;
 }
-body .row .card-intro {
+body .row .content .card-intro {
   padding: 5px 10px;
   padding-right: 30px;
 }
-body .row .card-intro button {
+body .row .content .card-intro button {
   background: rgba(255, 235, 59, 0.6);
   border: none;
   transition: 1s;
 }
-body .row .card-questions {
+body .row .content .card-questions {
   padding: 5px 10px;
   padding-right: 30px;
 }
-body .row .card-questions button {
+body .row .content .card-questions button {
   background: rgba(255, 235, 59, 0.6);
   border: none;
   transition: 1s;
 }
-body .row .card-questions .form-check {
+body .row .content .card-questions .form-check {
   margin-bottom: 0.5rem;
 }
-body .row .fader {
+body .row .content .fader {
   width: 160px;
   height: 2px;
   position: absolute;
@@ -92,7 +92,7 @@ body .row .fader {
   background: rgb(255, 235, 59);
   transition: 1s;
 }
-body .row .fader.active {
+body .row .content .fader.active {
   -webkit-animation-name: fader;
           animation-name: fader;
   -webkit-animation-duration: 4s;
@@ -100,7 +100,7 @@ body .row .fader.active {
   -webkit-animation-delay: 0.6s;
           animation-delay: 0.6s;
 }
-body .row .fader-reverce {
+body .row .content .fader-reverce {
   animation-direction: reverse;
 }
 @-webkit-keyframes fader {

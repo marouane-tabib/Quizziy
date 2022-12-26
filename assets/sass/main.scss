@@ -15,9 +15,9 @@ body{
             position: relative;
             @import 'components/steper';
             @import 'components/_card-result.scss';
+            @import 'components/card-intro';
+            @import 'components/card-questions';
+            @import 'components/fader';
         }
-        @import 'components/card-intro';
-        @import 'components/card-questions';
-        @import 'components/fader';
     }
 }
