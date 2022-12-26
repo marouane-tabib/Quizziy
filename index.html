@@ -97,6 +97,7 @@
       questionElement = document.querySelector('.card-questions #question');
       optionsContainer = document.querySelector('.card-questions #options');
       let defaultIndex = 0;
+      answers = [];
 
       function steperMove(){
         $('.steper-card .step-box.active').removeClass('active').next().addClass('active');
@@ -131,6 +132,7 @@
         getQuestions(index[defaultIndex]);
       }
       function next(){
+        getAnswers();
         index = questionsTraffic();
         if (defaultIndex < questions.length) {
           getQuestions(index[defaultIndex++]);
@@ -140,6 +142,10 @@
         steperMove();
         $('.card-questions').hide();
         $('.card-result').show();
+      }
+      function getAnswers(){
+        answer = $('input:checked').attr('id');
+        answers.push(answer);
       }
     </script>
   </body>
