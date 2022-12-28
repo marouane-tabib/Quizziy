@@ -6,8 +6,8 @@
       width = 0;
 
       function progressLineMove(){
-        width += 10;
         $('.progress-line').css('width' , width+'%');
+        width += 10;
       }
       function steperMove(){
         $('.steper-card .step-box.active').removeClass('active').next().addClass('active');

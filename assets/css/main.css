@@ -174,4 +174,5 @@ body .row .content .progress-line {
   bottom: 12px;
   left: 0;
   transition: 0.7s;
+  transition-timing-function: ease-in-out;
 }
