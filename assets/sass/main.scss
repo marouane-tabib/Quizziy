@@ -18,6 +18,14 @@ body{
             @import 'components/card-intro';
             @import 'components/card-questions';
             @import 'components/fader';
+            .progress-line{
+                height: 1px;
+                width: 50%;
+                background: #00800085;
+                position: absolute;
+                bottom: 12px;
+                left: 0;
+            }
         }
     }
 }

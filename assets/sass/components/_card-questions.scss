@@ -1,6 +1,7 @@
 .card-questions{
     padding: 5px 10px;
     padding-right: 30px;
+    position: relative;
     button{
         @include btn
     }

@@ -80,6 +80,7 @@ body .row .content .card-intro button {
 body .row .content .card-questions {
   padding: 5px 10px;
   padding-right: 30px;
+  position: relative;
 }
 body .row .content .card-questions button {
   background: rgba(255, 235, 59, 0.6);
@@ -160,4 +161,12 @@ body .row .content .fader-reverce {
     width: 160px;
     height: 2px;
   }
+}
+body .row .content .progress-line {
+  height: 1px;
+  width: 50%;
+  background: rgba(0, 128, 0, 0.5215686275);
+  position: absolute;
+  bottom: 12px;
+  left: 0;
 }
