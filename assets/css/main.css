@@ -164,9 +164,10 @@ body .row .content .fader-reverce {
 }
 body .row .content .progress-line {
   height: 1px;
-  width: 50%;
+  width: 0%;
   background: rgba(0, 128, 0, 0.5215686275);
   position: absolute;
   bottom: 12px;
   left: 0;
+  transition: 0.7s;
 }

@@ -3,7 +3,12 @@
       optionsContainer = document.querySelector('.card-questions #options');
       let defaultIndex = 0;
       answers = [];
+      width = 0;
 
+      function progressLineMove(){
+        width += 10;
+        $('.progress-line').css('width' , width+'%');
+      }
       function steperMove(){
         $('.steper-card .step-box.active').removeClass('active').next().addClass('active');
       }
@@ -16,6 +21,7 @@
         return arr;
       }
       function getQuestions(index){
+        progressLineMove();
         options = questions[index].options;
         question = questions[index].question;
         questionElement.innerText = question;
@@ -35,6 +41,8 @@
         $('.card-questions').show(1000);
         index = questionsTraffic();
         getQuestions(index[defaultIndex]);
+        selectAnswers(index[defaultIndex]);
+        defaultIndex++;
       }
       function next(){
         answer = $('input:checked').attr('id');
