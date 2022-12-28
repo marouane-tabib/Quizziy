@@ -2,6 +2,8 @@
 @import 'abstracts/mixins';
 body{
     background-color: $base-color;
+    background-image: radial-gradient(#444cf76b 1px, #e5e5f770 1px);
+    background-size: 20px 20px;
     .container{
         height: 100vh;
         display: flex;
