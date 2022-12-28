@@ -67,10 +67,10 @@ body .row .content .card-results .answers-cards .demonstration {
   margin-top: 10px;
 }
 body .row .content .card-results .answers-cards.issue {
-  background-color: rgba(255, 0, 0, 0.1803921569);
+  background-color: #f6c8ce;
 }
 body .row .content .card-results .answers-cards.correct {
-  background-color: rgba(0, 128, 0, 0.168627451);
+  background-color: #cbe1d2;
 }
 body .row .content .card-intro {
   padding: 5px 10px;
