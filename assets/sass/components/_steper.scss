@@ -1,26 +1,29 @@
 .steper-card{
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
     .step-box{
         position: relative;
-        background: #EEE;
-        padding: .8% 1.9%;
+        background: #f3f3fb;
+        padding: 0.8% 1.9%;
         border-radius: 50%;
-        border: 1px solid #CCC8;
-        box-shadow: 0 1px 6px #0002 inset;
+        border: 1px solid rgba(204, 204, 204, 0.5333333333);
+        box-shadow: 0px 0px 5px rgb(0 0 0 / 15%) inset;
         /* font-size: 1.1rem; */
         font-weight: bold;
         &.active{
             background: #fff389;
-            box-shadow: 1px 1px 8px #0003;
+            box-shadow: none;
+            border: solid 0.7px #0003;
         }
     }
     .steper-line{
         position: absolute;
         height: 1px;
         width: 100%;
-        background: linear-gradient(45deg, black, transparent);
+        // background: linear-gradient(45deg, #333, #3335 , #333);
+        background-color: #777;
         z-index: -1;
     }
 }
