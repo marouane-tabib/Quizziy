@@ -4,15 +4,14 @@ body{
     background-color: $base-color;
     background-image: radial-gradient(#444cf76b 1px, #e5e5f770 1px);
     background-size: 20px 20px;
+    @import 'components/logo-img';
     .container{
-        height: 100vh;
         display: flex;
-        @import 'components/logo-img';
     }
     .row{
         justify-content: center;
         align-items: center;
-        height: 100vh;
+        height: 100%;
         .content{
             position: relative;
             @import 'components/steper';
