@@ -6,16 +6,21 @@
     .step-box{
         position: relative;
         background: #f3f3fb;
-        padding: 3px 10px;
+        padding: 5px 12px;
         border-radius: 50%;
         border: 1px solid rgba(204, 204, 204, 0.5333333333);
         box-shadow: 0px 0px 5px rgb(0 0 0 / 15%) inset;
+        color: #777;
         /* font-size: 1.1rem; */
         font-weight: bold;
         &.active{
             background: #fff389;
             box-shadow: none;
             border: solid 0.7px #0003;
+            color: black;
+        }
+        &.flag{
+            padding: 5.5px 11.3px;
         }
     }
     .steper-line{
