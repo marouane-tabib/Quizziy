@@ -1,6 +1,11 @@
-.logo-img{
-    background: $yellow-background;
-    border-radius: 0 0 5px 5px;
-    box-shadow: 0px 1px 5px #0004;
-    position: fixed;
+
+.img-box{
+    position: relative;
+    height: auto !important;
+    .logo-img{
+        background: $yellow-background;
+        border-radius: 0 0 5px 5px;
+        box-shadow: 0px 1px 5px #0004;
+        position: relative;
+    }
 }
