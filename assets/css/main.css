@@ -175,7 +175,7 @@ body .row .content .fader-reverce {
   }
 }
 body .row .content .progress-line {
-  height: 1px;
+  height: 1.1px;
   width: 0%;
   background: rgba(0, 128, 0, 0.5215686275);
   position: absolute;
