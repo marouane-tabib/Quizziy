@@ -3,20 +3,23 @@ body {
   background-image: radial-gradient(rgba(68, 76, 247, 0.4196078431) 1px, rgba(229, 229, 247, 0.4392156863) 1px);
   background-size: 20px 20px;
 }
-body .container {
-  height: 100vh;
-  display: flex;
+body .img-box {
+  position: relative;
+  height: auto !important;
 }
-body .container .logo-img {
+body .img-box .logo-img {
   background: rgba(255, 235, 59, 0.6);
   border-radius: 0 0 5px 5px;
   box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.2666666667);
-  position: fixed;
+  position: relative;
+}
+body .container {
+  display: flex;
 }
 body .row {
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 100%;
 }
 body .row .content {
   position: relative;
