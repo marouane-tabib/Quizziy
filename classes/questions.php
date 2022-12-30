@@ -4,13 +4,14 @@ require 'includes/connect.php';
 class question {
 
 // Properties
-    // 
+    private $title;
+    private $options;
 
 // Methods
-    function set_name($name) {
+    function set_question($title , $options) {
         // 
     }
-    function get_name() {
+    function get_question() {
         // return ...
     }
 }
