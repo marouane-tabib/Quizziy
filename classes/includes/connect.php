@@ -1,14 +1,19 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
+// include('db_info.php');
+session_start();
+class DB{
+    protected $pdo;
+    function __construct()
+    {
+        try {
+            $this->pdo = new PDO("mysql:host=localhost;dbname=youcode_quiz_quizizy", "root", "");
+        } catch (PDOException $e) {
+            die("ERROR: Could not connect. " . $e->getMessage());
+        }
+    }
 
-try {
-  $conn = new PDO("mysql:host=$servername;dbname=youcode_quiz_quizizy", $username, $password);
-  // set the PDO error mode to exception
-  $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-  echo "Connected successfully";
-} catch(PDOException $e) {
-  echo "Connection failed: " . $e->getMessage();
+    function __destruct()
+    {
+        if ($this->pdo !== null) {$this->pdo = null;} //return false to close the connection
+    }
 }
-?>
