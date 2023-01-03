@@ -45,20 +45,20 @@
         </div>
       </div>
     </section>
-    <script src="https://code.jquery.com/jquery-3.6.3.slim.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/js/data.js"></script>
+    <!-- <script src="classes/myfile.json"></script> -->
     <script src="assets/js/main.js"></script>
     <script>
       $(document).ready(function(){
           $.ajax({
               url: "classes/questions.php",
               method: "GET",
-              dataType : "json",
+			        data : {action:'show'},
+              dataType : "text",
           })
           .done(function(response){
-              let data = JSON.stringify(response);
-              console.log(data);
+              data = $.parseJSON(response);
           })
           .fail(function(error){
               alert("La requête s'est terminée en échec. Infos : " + JSON.stringify(error));
