@@ -57,15 +57,12 @@
               dataType : "text",
           })
           .done(function(response){
-              data = $.parseJSON(response);
-              options = $.parseJSON(data[0].options);
+              questionsData = $.parseJSON(response);
+              optionsData = $.parseJSON(questionsData.options);
           })
           .fail(function(error){
               alert("La requête s'est terminée en échec. Infos : " + JSON.stringify(error));
           })
-          // .always(function(){
-          //     alert("Requête effectuée");
-          // });
       });
     </script>
     <script src="assets/js/main.js"></script>
