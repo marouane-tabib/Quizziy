@@ -14,16 +14,16 @@
       }
       function questionsTraffic(){
         var arr = [];
-        while(arr.length < questions.length){
-            r = Math.floor(Math.random() * (questions.length - 0) + 0);
+        while(arr.length < questionsData.length){
+            r = Math.floor(Math.random() * (questionsData.length - 0) + 0);
             if(arr.indexOf(r) === -1) arr.push(r);
         }
         return arr;
       }
       function getQuestions(index){
         progressLineMove();
-        options = questions[index].options;
-        question = questions[index].question;
+        options = $.parseJSON(questionsData[index].options);
+        question = questionsData[index].question;
         questionElement.innerText = question;
         optionsContainer.innerHTML = "";
         for (const option in options) {
@@ -47,7 +47,7 @@
       function next(){
         answer = $('input:checked').attr('id');
         if(answer){
-          if (defaultIndex < questions.length) {
+          if (defaultIndex < questionsData.length) {
             selectAnswers(index[defaultIndex]);
             getQuestions(index[defaultIndex++]);
           }else { getResult(); }
@@ -56,13 +56,14 @@
       function getResult(){
         resultElement = document.querySelector('.card-results');
         for (const answer in answers) {
-          let question = questions[answers[answer][1]];
+          let question = questionsData[answers[answer][1]],
+              options = $.parseJSON(question.options),
               Answerquestion = question.question,
-              AnswerCorrect = question.answer.correctOption,
-              AnswerCorrectOption = question.options[AnswerCorrect],
-              AnswerDemonstration = question.answer.demonstration,
+              AnswerCorrect = question.correct_option,
+              AnswerCorrectOption = options[AnswerCorrect],
+              AnswerDemonstration = question.demonstration,
               userChose = answers[answer][0],
-              userChoseOption = question.options[userChose],
+              userChoseOption = options[userChose],
               cardClass = "",
               correctElementClass = "";
               if(AnswerCorrect == userChose){ cardClass = "correct" , correctElementClass = "d-none"; }else{ cardClass = "issue" }

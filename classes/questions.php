@@ -5,7 +5,7 @@ class question extends DB {
   // Methods
     public function show() {
       try {
-          $sql = "SELECT * FROM `questions` WHERE id = 3";
+          $sql = "SELECT questions.* , answers.correct_option , answers.demonstration FROM questions INNER JOIN answers ON questions.id = answers.questions_id";
           $stm = $this->pdo->prepare($sql);
           $stm->execute();
           $result = $stm->fetchAll();
