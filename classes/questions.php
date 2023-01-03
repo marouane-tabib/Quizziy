@@ -15,4 +15,13 @@ class question extends DB {
       }
     }
 }
+
+$action = $_REQUEST['action'];
+
+$objQuestion = new question();
+if($action=="show"){
+	$questions = $objQuestion->show();
+	echo json_encode($questions);
+}
+
 ?>
