@@ -80,6 +80,15 @@ body .row .content .card-results .answers-cards.issue {
 body .row .content .card-results .answers-cards.correct {
   background-color: #cbe1d2;
 }
+body .row .content .card-results .score {
+  background: #f4f4fc;
+  display: inline;
+  padding: 4px 10px;
+  border-radius: 5px;
+  font-weight: bold;
+  border: solid 0.7px rgba(0, 0, 0, 0.2);
+  box-shadow: 1px 0px 10px rgba(0, 0, 0, 0.1333333333);
+}
 body .row .content .card-intro {
   padding: 5px 10px;
   padding-right: 30px;
