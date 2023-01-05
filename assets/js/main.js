@@ -81,12 +81,14 @@
                   <div class="demonstration">${AnswerDemonstration}</div>
                 </div>`;
         }
-        scoreRecorde(questionsData.length ,issueNumber )
+        scoreRecorde(questionsData.length ,questionsData.length - issueNumber )
         steperMove();
         $('.card-questions').hide();
         $('.card-results').show();
       }
       function selectAnswers(questionIndex){
-        answer = $('input:checked').attr('id');
-        answers.push([answer , questionIndex]);
+        if(defaultIndex != 0){
+          answer = $('input:checked').attr('id');
+          console.log(answer);
+          answers.push([answer , questionIndex]);}
       }
