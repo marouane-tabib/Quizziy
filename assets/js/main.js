@@ -4,7 +4,12 @@
       let defaultIndex = 0;
       answers = [];
       width = 0;
+      issueNumber = 0;
 
+      function scoreRecorde(questionNumber , issueNumber){
+        issueScore = document.querySelector('#score').innerText = `Your Score : ${issueNumber} / ${questionNumber}`;
+        // RecordesNumber = document.querySelector('#questionNumber').innerText = issueNumber; 
+      }
       function progressLineMove(){
         $('.progress-line').css('width' , width+'%');
         width += 10;
@@ -66,7 +71,7 @@
               userChoseOption = options[userChose],
               cardClass = "",
               correctElementClass = "";
-              if(AnswerCorrect == userChose){ cardClass = "correct" , correctElementClass = "d-none"; }else{ cardClass = "issue" }
+              if(AnswerCorrect == userChose){ cardClass = "correct" , correctElementClass = "d-none"; }else{ cardClass = "issue" ; issueNumber++ }
 
               resultElement.innerHTML += `
                 <div class="answers-cards ${ cardClass }">
@@ -76,6 +81,7 @@
                   <div class="demonstration">${AnswerDemonstration}</div>
                 </div>`;
         }
+        scoreRecorde(questionsData.length ,issueNumber )
         steperMove();
         $('.card-questions').hide();
         $('.card-results').show();
